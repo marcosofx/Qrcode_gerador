@@ -15,7 +15,6 @@ def gerar_qrcode(link, logo_path):
 
     qr_img = qr.make_image(fill_color="black", back_color="white")
 
-    # Adicionar a logo diretamente ao centro do QR Code
     logo = Image.open(logo_path)
     logo = logo.resize((80, 80))
     qr_img.paste(logo, (int((qr_img.size[0] - logo.size[0]) / 2), int((qr_img.size[1] - logo.size[1]) / 2)))
@@ -37,7 +36,7 @@ def gerar_link_e_qrcode():
     label_qrcode.config(image=imagem_qrcode)
     label_qrcode.image = imagem_qrcode
     
-    # Forçar a atualização da interface gráfica no Tkinter
+
     janela.update_idletasks()
 
 janela = tk.Tk()
